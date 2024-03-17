@@ -72,5 +72,5 @@ class GraphEDA:
     
 
 if __name__ == "__main__":
-    geda = graphEDA(file_location=FILE_LOCATION, file_type='tsv', show_head=False)
+    geda = GraphEDA(file_location=FILE_LOCATION, file_type='tsv', show_head=False)
     geda.graph_stats()

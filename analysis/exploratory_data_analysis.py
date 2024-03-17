@@ -8,54 +8,19 @@ import igraph as ig
 from configs import neuron_cc_config
 from scripts import constants
 
-FILE_LOCATION = neuron_cc_config.FILE_LOCATION
-
 
 class GraphEDA:
     """Class for performing exploratory data analysis (EDA) on a graph."""
 
-    def __init__(self, file_location, file_type, show_head=False):
+    def __init__(self, data_graph):
         """
         Initialize the GraphEDA object.
 
         Parameters:
-        - file_location (str): The path to the input file.
-        - file_type (str): The type of the input file (e.g., 'csv', 'tsv').
-        - show_head (bool): Whether to display the head of the DataFrame.
+        - data_graph (igraph.Graph): The graph object.
 
         """
-        self.file_location = file_location
-        self.file_type = file_type
-        self.show_head = show_head
-        self.data_df = self.data_reader()
-        self.data_graph = self.graph_builder()
-
-    def data_reader(self):
-        """
-        Read data from the input file and return it as a DataFrame.
-
-        Returns:
-        - dataframe (pd.DataFrame): The DataFrame containing the data.
-
-        """
-        logger.debug('Reading File content')
-        dataframe = pd.read_csv(self.file_location, sep=constants.file_separator[self.file_type])
-        if self.show_head:
-            print(tabulate(dataframe.head(), tablefmt='fancy_grid'))
-        return dataframe
-    
-    def graph_builder(self):
-        """
-        Build a graph from the DataFrame.
-
-        Returns:
-        - g (igraph.Graph): The constructed graph.
-
-        """
-        logger.debug('Building graph')
-        g = ig.Graph.TupleList(self.data_df.itertuples(index=False), directed=False)
-        print(g.summary())
-        return g
+        self.data_graph = data_graph
 
     def graph_stats(self):
         """
@@ -69,8 +34,18 @@ class GraphEDA:
         # ratio of the number of edges |E| with respect to the maximum possible edges
         print("Density:", self.data_graph.density())
 
-    
+    def degree_dist(self):
+        """
+        Degree Distribution of graph
+        """
+        print("\nDegree Distribution:")
+        print("Average degree:", sum(self.data_graph.degree()) / self.data_graph.vcount())
+        print("Degree histogram:", self.data_graph.degree_distribution().bins())
 
-if __name__ == "__main__":
-    geda = GraphEDA(file_location=FILE_LOCATION, file_type='tsv', show_head=False)
-    geda.graph_stats()
+    def clustering_coeff(self):
+        """
+        Clusetering coeff
+        """
+        print("\nClustering Coefficient:")
+        print("Average clustering coefficient:", self.data_graph.transitivity_avglocal_undirected())
+    

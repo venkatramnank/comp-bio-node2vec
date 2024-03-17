@@ -77,5 +77,6 @@ Based on `bio-yeast` data and  `plotly`.
 
 ## Authors
 
-Venkat Ramnan K
-Subramnanya Keshavamurthy
+- _Venkat Ramnan K_
+
+- _Subramnanya Keshavamurthy_

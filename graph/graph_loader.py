@@ -66,6 +66,7 @@ class GraphLoader:
         data = mmread(self.file_location)
         g = nx.Graph(data)
         g = ig.Graph.from_networkx(g)
+        print(g.summary())
         return g
     
     def _build_graph_pandas(self, data_df):

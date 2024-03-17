@@ -2,9 +2,9 @@ import pandas as pd
 from loguru import logger
 from tabulate import tabulate
 import igraph as ig
-from configs import neuron_cc_config
+import networkx as nx
 from scripts import constants
-
+from scipy.io import mmread
 
 class GraphLoader:
     """Class for loading data and building a graph."""
@@ -37,6 +37,8 @@ class GraphLoader:
             g = self._build_graph_pandas(data)
         elif self.file_type == 'graphml':
             g = self._read_data_graphml()
+        elif self.file_type == 'mtx':
+            g = self._read_data_mtx()
             
         return g
 
@@ -57,8 +59,15 @@ class GraphLoader:
     def _read_data_graphml(self):
         logger.debug('Reading File content')
         data = ig.Graph.Read_GraphML(self.file_location)
+        print(data.summary())
         return data
 
+    def _read_data_mtx(self):
+        data = mmread(self.file_location)
+        g = nx.Graph(data)
+        g = ig.Graph.from_networkx(g)
+        return g
+    
     def _build_graph_pandas(self, data_df):
         """
         Build a graph from the DataFrame.

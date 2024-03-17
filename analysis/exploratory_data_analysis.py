@@ -4,10 +4,11 @@ from loguru import logger
 from tabulate import tabulate
 from tqdm import tqdm
 import igraph as ig
-
+import matplotlib.pyplot as plt
 from configs import neuron_cc_config
 from scripts import constants
-
+import plotly.graph_objs as go
+import colorsys
 
 class GraphEDA:
     """Class for performing exploratory data analysis (EDA) on a graph."""
@@ -38,9 +39,17 @@ class GraphEDA:
         """
         Degree Distribution of graph
         """
-        print("\nDegree Distribution:")
-        print("Average degree:", sum(self.data_graph.degree()) / self.data_graph.vcount())
-        print("Degree histogram:", self.data_graph.degree_distribution().bins())
+        # Get the degree sequence of the graph
+        degree_sequence = self.data_graph.degree()
+
+        # Plot the histogram
+        plt.figure(figsize=(8, 6))
+        plt.hist(degree_sequence, bins=range(min(degree_sequence), max(degree_sequence) + 2, 1), color='blue', edgecolor='black', alpha=0.7)
+        plt.title('Degree Distribution Histogram')
+        plt.xlabel('Degree')
+        plt.ylabel('Frequency')
+        plt.grid(True)
+        plt.show()
 
     def clustering_coeff(self):
         """
@@ -48,4 +57,15 @@ class GraphEDA:
         """
         print("\nClustering Coefficient:")
         print("Average clustering coefficient:", self.data_graph.transitivity_avglocal_undirected())
+
+    def centrality_measures(self):
+        """
+        Centrality measures
+        """
+        print("\nCentrality Measures:")
+        print("Degree centrality:", self.data_graph.degree())
+        print("Betweenness centrality:", self.data_graph.betweenness())
+        print("Closeness centrality:", self.data_graph.closeness())
+        print("Eigenvector centrality:", self.data_graph.evcent())
+
     

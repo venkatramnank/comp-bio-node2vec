@@ -39,6 +39,8 @@ class GraphLoader:
             g = self._read_data_graphml()
         elif self.file_type == 'mtx':
             g = self._read_data_mtx()
+        elif self.file_type == 'edgelist':
+            g = self._read_data_edgelist()
             
         return g
 
@@ -63,12 +65,20 @@ class GraphLoader:
         return data
 
     def _read_data_mtx(self):
+        logger.debug('Reading File content')
         data = mmread(self.file_location)
         g = nx.Graph(data)
         g = ig.Graph.from_networkx(g)
         print(g.summary())
         return g
     
+    def _read_data_edgelist(self):
+        logger.debug('Reading File content')
+        g = nx.read_edgelist(self.file_location)
+        g = ig.Graph.from_networkx(g)
+        print(g.summary())
+        return g
+
     def _build_graph_pandas(self, data_df):
         """
         Build a graph from the DataFrame.

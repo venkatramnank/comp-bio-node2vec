@@ -60,3 +60,22 @@ python -m runner --config {config file}
 ## Some visualizations
 
 Based on `bio-yeast` data and  `plotly`.
+
+<p align="center">
+  <img src="./images/vis.gif" alt="Visualization GIF" />
+</p>
+<p align="center">
+  <em>Visualization for Yease</em>
+</p>
+
+<p align="center">
+  <img src="./images/community_det.gif" alt="Comm det GIF" />
+</p>
+<p align="center">
+  <em>Community Detection for Yeast</em>
+</p>
+
+## Authors
+
+Venkat Ramnan K
+Subramnanya Keshavamurthy

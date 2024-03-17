@@ -65,7 +65,7 @@ Based on `bio-yeast` data and  `plotly`.
   <img src="./images/vis.gif" alt="Visualization GIF" />
 </p>
 <p align="center">
-  <em>Visualization for Yease</em>
+  <em>Visualization for Yeast</em>
 </p>
 
 <p align="center">

@@ -6,6 +6,7 @@ Exploratory data analysis of yeast data. Multilevel Community detection of Bio-y
 
 - [About](#about)
 - [Installation](#installation)
+- [Data](#data)
 - [Usage](#usage)
 
 
@@ -31,6 +32,17 @@ pip install -r requirements.txt
 
 While installing `pycairo` please follow https://pycairo.readthedocs.io/en/latest/getting_started.html.
 
+
+## Data
+
+All the data used for the experiments in this project are as below:
+
+1. Yeast mtx list : https://networkrepository.com/bio-yeast.php
+2. Disease data:
+    1. Disease edgelist : https://snap.stanford.edu/deepnetbio-ismb/ipynb/diseasome.edgelist
+    2. Disease Labels: https://snap.stanford.edu/deepnetbio-ismb/ipynb/disease.labels
+3. S-cerevisiae (yeast) data for tsne: https://snap.stanford.edu/data/S-cerevisiae.html
+4. Fly, cat brain and other eda example datasets: https://neurodata.io/project/connectomes/
 
 ## Usage
 

@@ -1,7 +1,7 @@
 class config:
     # Paths
-    EDGELIST_PATH = '/Users/venkatramnankalyanakumar/Desktop/OSU/winter2024/NetworksCompBio/project/comp-bio-project/data/diseasesome.edgelist'
-    LABELS_PATH = '/Users/venkatramnankalyanakumar/Desktop/OSU/winter2024/NetworksCompBio/project/comp-bio-project/data/disease.labels'
+    EDGELIST_PATH = './data/diseasesome.edgelist'
+    LABELS_PATH = './data/disease.labels'
 
     # Embedding configuration
     EMBEDDING_DIMENSIONS = 32

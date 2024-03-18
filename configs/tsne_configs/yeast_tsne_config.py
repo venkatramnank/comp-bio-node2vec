@@ -1,6 +1,6 @@
 class config:
     # Paths
-    EDGELIST_PATH = '/Users/venkatramnankalyanakumar/Desktop/OSU/winter2024/NetworksCompBio/project/comp-bio-project/data/yeast_snap/S-cerevisiae.txt'
+    EDGELIST_PATH = './data/yeast_snap/S-cerevisiae.txt'
 
     # Embedding configuration
     EMBEDDING_DIMENSIONS = 64

@@ -1,5 +1,5 @@
 class Config:
-    FILE_LOCATION = '/Users/venkatramnankalyanakumar/Desktop/OSU/winter2024/NetworksCompBio/project/comp-bio-project/data/diseasesome.edgelist'
+    FILE_LOCATION = './data/diseasesome.edgelist'
     FILE_TYPE = 'edgelist'
 
     # Flags to enable/disable functions

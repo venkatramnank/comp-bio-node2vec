@@ -11,9 +11,9 @@ Exploratory data analysis of yeast data. Multilevel Community detection of Bio-y
 
 ## About
 
-- [ ] Graph Convolutional Prediction of Protein Interactions
+- [x] Node2Vec experiments
 - [x] Plotly visualization
-- [x] Community detection and visualization
+- [x] Community detection and visualization (multilevel)
 - [x] Graph analysis (Igraph/Networkx)
 - [x] Clustering coefficient
 - [x] Centrality and degree distribution
@@ -57,6 +57,28 @@ class Config:
 python -m runner --config {config file}
 ```
 
+Example run
+```bash
+python -m runner --config configs.eda_configs.yeast_config
+```
+
+### Disease Network Embedding and Visualization with Configurable Parameters
+
+This code analyzes relationships between diseases by first generating a numerical representation for each disease based on its connections to others in a network. It then visualizes these relationships in a multi-dimensional space, with diseases grouped and colored by their types to highlight potential clusters and patterns.
+Inspired by [Stanford Deepnet tutorial](https://snap.stanford.edu/deepnetbio-ismb/ipynb/Human+Disease+Network.html).
+
+```bash
+python -m node2vecexp.node2vec_human_diseases --config configs.tsne_configs.human_disease_tsne_config
+```
+
+### Analyzing Operon Networks with Node2Vec and t-SNE Visualization for Yeast
+
+This code explores relationships between operons in a network. It reads data on operon connections, creates a network representation, and uses Node2Vec to capture how operons are connected. t-SNE then visualizes these connections in 2D or 3D, allowing researchers to see which operons are similar based on their network context. This is useful for understanding how operon functionality might be related to their network position. By coloring the visualizations by similarity, the code helps identify clusters of potentially co-functioning operons.
+
+```bash
+python -m node2vecexp.node2vec_yeast --config configs.tsne_configs.yeast_tsne_config
+```
+
 ## Some visualizations
 
 Based on `bio-yeast` data and  `plotly`.
@@ -74,6 +96,23 @@ Based on `bio-yeast` data and  `plotly`.
 <p align="center">
   <em>Community Detection for Yeast</em>
 </p>
+
+<p align="center">
+  <img src="./images/human_disease.png" alt="human disease" />
+</p>
+<p align="center">
+  <em>Human disease embedding</em>
+</p>
+
+<p align="center">
+  <img src="./images/yeast.png" alt="yeast" />
+</p>
+<p align="center">
+  <em>Similarity in yeast</em>
+</p>
+
+
+
 
 ## Authors
 

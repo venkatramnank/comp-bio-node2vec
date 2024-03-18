@@ -1,6 +1,6 @@
-# Computational Networks in Biology (Project)
+# Node2Vec embedding and graph analysis for computational biological networks 
 
-Exploratory data analysis of yeast data. Multilevel Community detection of Bio-yeast.
+Exploratory data analysis of yeast data. Multilevel Community detection of Bio-yeast. Node2Vec for human disease data with tSNE. Cosine similarity using Node2Vec for yeast operon network.
 
 ## Table of Contents
 
@@ -8,6 +8,7 @@ Exploratory data analysis of yeast data. Multilevel Community detection of Bio-y
 - [Installation](#installation)
 - [Data](#data)
 - [Usage](#usage)
+- [Important References](#references)
 
 
 ## About
@@ -124,7 +125,14 @@ Based on `bio-yeast` data and  `plotly`.
 </p>
 
 
-
+## Important References
+- igraph : https://igraph.org/python/tutorial/0.9.6/
+- node2vec (python) : https://github.com/eliorc/node2vec 
+- node2vec (paper) : https://arxiv.org/abs/1607.00653
+- multilevel community detection : https://igraph.org/c/doc/igraph-Community.html
+- Stanford DeepNet : https://snap.stanford.edu/deepnetbio-ismb/ipynb/Human+Disease+Network.html
+- cosine similarity : https://en.wikipedia.org/wiki/Cosine_similarity
+- tSNE : [scikit learn tsne](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html#:~:text=T%2Ddistributed%20Stochastic%20Neighbor%20Embedding,and%20the%20high%2Ddimensional%20data.)
 
 ## Authors
 

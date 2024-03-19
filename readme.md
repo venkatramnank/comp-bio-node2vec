@@ -1,4 +1,4 @@
-# CS 546 Final Project (Team Helium)
+# Node2Vec and t-SNE in computational biology
  
 Exploratory data analysis of yeast data. Multilevel Community detection of Bio-yeast. Node2Vec for human disease data with tSNE. Cosine similarity using Node2Vec for yeast operon network.
 
@@ -180,8 +180,4 @@ The visualization, t-SNE, and cosine similarity analysis collectively provide in
 - cosine similarity : https://en.wikipedia.org/wiki/Cosine_similarity
 - tSNE : [scikit learn tsne](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html#:~:text=T%2Ddistributed%20Stochastic%20Neighbor%20Embedding,and%20the%20high%2Ddimensional%20data.)
 
-## Authors
 
-- _Venkat Ramnan K_
-
-- _Subramanya Keshavamurthy_
